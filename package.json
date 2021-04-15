@@ -1,5 +1,5 @@
 {
-  "name": "vcardplugin",
+  "name": "cordova-plugin-share-vcard-contact",
   "version": "1.0.0",
   "description": "plugin to create a vcad",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "cordova": {
-    "id": "cordova-plugin-vcard",
+    "id": "cordova-plugin-share-vcard-contact",
     "platforms": [
       "ios"
     ]
@@ -19,5 +19,13 @@
     "cordova-ios"
   ],
   "author": "Gabriele Moia",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrieleMoia/cordova-plugin-share-vcard-contact.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GabrieleMoia/cordova-plugin-share-vcard-contact/issue"
+  },
+  "homepage": "https://github.com/GabrieleMoia/cordova-plugin-share-vcard-contact#readme"
 }
