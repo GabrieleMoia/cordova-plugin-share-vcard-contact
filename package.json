@@ -1,0 +1,23 @@
+{
+  "name": "vcardplugin",
+  "version": "1.0.0",
+  "description": "plugin to create a vcad",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "cordova": {
+    "id": "cordova-plugin-vcard",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "vcard",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Gabriele Moia",
+  "license": "ISC"
+}
