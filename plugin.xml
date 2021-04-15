@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-vcard" version="1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-share-vcard-contact" version="1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>VCardPlugin</name>
     <js-module name="VCardPlugin" src="www/VCardPlugin.js">
         <clobbers target="VCardPlugin" />
     </js-module>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <feature name="VCardPlugin">
-                <param name="ios-package" value="VCardPlugin" />
+            <feature name="cordova-plugin-share-vcard-contact">
+                <param name="ios-package" value="cordova-plugin-share-vcard-contact" />
             </feature>
         </config-file>
         <source-file src="src/ios/VCardPlugin.swift" />
