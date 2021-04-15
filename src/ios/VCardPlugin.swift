@@ -6,8 +6,8 @@ import Contacts
     @objc(createVCard:) func createVCard(_ command: CDVInvokedUrlCommand) {
         
         if let value = command.arguments[0] as? [String: String] {
-            if let name = value["NOME"], let secondName = value["COGNOME"], let number = value["NUMERO_CELL"] {
-                let contact = createContact(Contact(name: name, secondName: secondName, number: number))
+            if let name = value["NOME"], let secondName = value["COGNOME"] {
+                let contact = createContact(Contact(name: name, secondName: secondName, number: value["NUMERO_CELL"], email: value["MAIL_UTENTE"]))
                 do {
                     try shareContacts(contacts: [contact])
                 }
@@ -25,10 +25,16 @@ import Contacts
         
         contact.givenName = value.name
         contact.familyName = value.secondName
-        
-        contact.phoneNumbers = [CNLabeledValue(
-                                    label:CNLabelPhoneNumberiPhone,
-                                    value:CNPhoneNumber(stringValue:value.number))]
+        if let number = value.number {
+            contact.phoneNumbers = [CNLabeledValue(
+                                        label:CNLabelPhoneNumberiPhone,
+                                        value:CNPhoneNumber(stringValue: number))]
+            
+        }
+        if let email = value.email {
+            let workEmail = CNLabeledValue(label:CNLabelWork, value: email as NSString)
+            contact.emailAddresses = [workEmail]
+        }
         
         return contact
     }
@@ -69,5 +75,6 @@ import Contacts
 struct Contact {
     var name: String
     var secondName: String
-    var number: String
+    var number: String?
+    var email: String?
 }

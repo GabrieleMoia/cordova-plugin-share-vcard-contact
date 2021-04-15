@@ -6,8 +6,8 @@
     </js-module>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <feature name="cordova-plugin-share-vcard-contact">
-                <param name="ios-package" value="cordova-plugin-share-vcard-contact" />
+            <feature name="VCardPlugin">
+                <param name="ios-package" value="VCardPlugin" />
             </feature>
         </config-file>
         <source-file src="src/ios/VCardPlugin.swift" />
