@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-share-vcard-contact",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "plugin to create a vcad",
   "main": "index.js",
   "scripts": {
