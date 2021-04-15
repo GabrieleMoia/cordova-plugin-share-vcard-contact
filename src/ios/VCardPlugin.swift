@@ -5,9 +5,9 @@ import Contacts
     var pluginResult = CDVPluginResult(status: CDVCommandStatus_ERROR)
     @objc(createVCard:) func createVCard(_ command: CDVInvokedUrlCommand) {
         
-        if let value = command.arguments[0] as? [String: String] {
-            if let name = value["NOME"], let secondName = value["COGNOME"] {
-                let contact = createContact(Contact(name: name, secondName: secondName, number: value["NUMERO_CELL"], email: value["MAIL_UTENTE"]))
+        if let value = command.arguments[0] as? [String: Any] {
+            if let name = value["NOME"] as? String, let secondName = value["COGNOME"] as? String {
+                let contact = createContact(Contact(name: name, secondName: secondName, number: value["NUMERO_CELL"] as? String, email: value["MAIL_UTENTE"] as? String))
                 do {
                     try shareContacts(contacts: [contact])
                 }
